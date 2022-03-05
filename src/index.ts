@@ -5,10 +5,10 @@ import {
 	RedisTableQuery,
 	RedisTableSetOptions,
 	RedisTableDataObject,
-} from './defined';
-import { makeRedisTableError, PREFIX } from './utils';
-import fetcher from './abstract/fetcher';
-import setter from './abstract/setter';
+} from './defined.js';
+import { makeRedisTableError, PREFIX } from './utils.js';
+import fetcher from './abstract/fetcher.js';
+import setter from './abstract/setter.js';
 
 export default class RedisTable implements RedisTableType {
 	private _client: RedisClientType; // Redis Client Connection
@@ -17,7 +17,7 @@ export default class RedisTable implements RedisTableType {
 	constructor(client: RedisClientType, options: RedisTableOptions = {}) {
 		this._client = client;
 		this.maxConnectTrials = options.maxConnectTrials ?? 10;
-		this.checkRedisConnection().catch((err) => console.error(err));
+		this.checkRedisConnection();
 	}
 
 	/**
@@ -50,7 +50,7 @@ export default class RedisTable implements RedisTableType {
 	 * @param {Object} query - query object
 	 * @returns {Object}
 	 */
-	async get(cacheName: string, query: RedisTableQuery = {}): Promise<Object> {
+	async get(cacheName: string, query: RedisTableQuery = {}): Promise<object> {
 		return await fetcher(this._client, cacheName, query);
 	}
 
@@ -66,4 +66,4 @@ export default class RedisTable implements RedisTableType {
 	}
 }
 
-export * from './defined';
+export * from './defined.js';

@@ -1,4 +1,4 @@
-import RedisTable, { RedisTableType } from '../index';
+import RedisTable, { RedisTableType } from '../index.js';
 import { createClient, RedisClientType } from 'redis';
 const rclient: RedisClientType = createClient();
 const rt: RedisTableType = new RedisTable(rclient);

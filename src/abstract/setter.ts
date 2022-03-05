@@ -1,6 +1,6 @@
 import { RedisClientType } from 'redis';
-import { RedisTableSetOptions, RedisTableDataObject } from '../defined';
-import { makeRedisTableError, PREFIX, DEFAULT_EXPIRE_TIME } from '../utils';
+import { RedisTableSetOptions, RedisTableDataObject } from '../defined.js';
+import { makeRedisTableError, PREFIX, DEFAULT_EXPIRE_TIME } from '../utils.js';
 
 export default async function setter(
 	redisClient: RedisClientType,
@@ -18,7 +18,7 @@ export default async function setter(
 		return true;
 	} catch (err) {
 		// throw makeRedisTableError(er);
-		console.error(err);
+		// console.error(err);
 		return false;
 	}
 }

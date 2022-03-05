@@ -18,7 +18,7 @@ interface RedisTableQuery {
 }
 
 interface RedisTableType {
-	get(cacheName: string, query: RedisTableQuery): Promise<Object>;
+	get(cacheName: string, query: RedisTableQuery): Promise<object>;
 	set(cacheName: string, data: RedisTableDataObject, options: RedisTableSetOptions): Promise<boolean>;
 	destroy(): Promise<void>;
 }
