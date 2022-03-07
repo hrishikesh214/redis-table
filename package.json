@@ -16,6 +16,10 @@
 		"version": "npm run format && git add -A src",
 		"postversion": "git push && git push --tags"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hrishikesh214/redis-table"
+	},
 	"keywords": [
 		"redis",
 		"table",
